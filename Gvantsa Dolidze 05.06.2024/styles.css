@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    
+}
+h1{
+    text-align: center;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    width:300px;
+    gap:10px;
+    margin: auto;
+}
+input {
+    height: 40px;
+    box-sizing: border-box;
+    outline:none;
+    border-radius: 5px;
+    border:2px solid cadetblue;
+}
+.highlight {
+    background-color: rgba(131, 167, 228, 0.43);
+    outline:none;
+}
+
+button {
+    height:40px;
+    border:none;
+    border-radius: 5px;
+    background-color: cadetblue;
+    cursor:pointer;
+    font-size: 18px;
+    transition: all 0.5s;
+}
+button:hover { 
+    background-color: rgb(53, 164, 164);
+    /* color:#fff; */
+}
