@@ -24,12 +24,12 @@ const mobile = {
     }
 };
 
-console.log("After update:")
+console.log("Before update:")
 console.log(mobile.getFullInfo());
 
 mobile.updateMobile('Samsung', 'S24 Ultra', 'Gray', 512, 2024);
 
-console.log("Before update:")
+console.log("After update:")
 console.log(mobile.getFullInfo());
 
 document.getElementById("click-btn").addEventListener('click', () => {
