@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
         toDoArr.forEach(function (list, index) {
             const li = document.createElement('li');
             li.textContent = list;
-
             const removeBtn = document.createElement('button');
             removeBtn.textContent = 'Remove';
             removeBtn.addEventListener("click", () => {
