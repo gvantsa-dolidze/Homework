@@ -8,9 +8,14 @@ main {
     max-width:700px;
     margin:auto;
     margin-top: 50px;
-    padding-top:20px;
+    padding:50px;
     border: 3px solid gray;
     border-radius: 15px;
+}
+.container {
+    display: flex;
+    gap:10px;
+    padding-bottom: 50px;
 }
 button{
     border:none;
@@ -18,9 +23,11 @@ button{
     height:30px;
     transition:all 0.5s;
     cursor:pointer;
+    border-radius: 5px;
+    border:1px solid black;
 }
 button:hover {
-    /* background:rgb(184, 187, 187); */
+    background:rgb(184, 187, 187);
 }
 input {
     width:300px;
@@ -28,4 +35,19 @@ input {
     box-sizing: border-box;
     outline: none;
     padding:5px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+ul{
+    padding:0;
+    margin:0;
+}
+li {
+    list-style-type: none;
+    padding-bottom:10px;
+    padding-top:10px;
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+
 }
