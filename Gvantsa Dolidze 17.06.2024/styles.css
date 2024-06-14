@@ -1,0 +1,31 @@
+body, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+main { 
+    width:100%;
+    max-width:700px;
+    margin:auto;
+    margin-top: 50px;
+    padding-top:20px;
+    border: 3px solid gray;
+    border-radius: 15px;
+}
+button{
+    border:none;
+    width:100px;
+    height:30px;
+    transition:all 0.5s;
+    cursor:pointer;
+}
+button:hover {
+    /* background:rgb(184, 187, 187); */
+}
+input {
+    width:300px;
+    height:30px;
+    box-sizing: border-box;
+    outline: none;
+    padding:5px;
+}
