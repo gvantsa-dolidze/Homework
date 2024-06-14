@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
     const navBar = document.getElementById("nav");
     const addText = document.getElementById("add-text");
+    const deleteAllBtn = document.getElementById("delete-all-btn");
     const addBtn = document.getElementById("add-btn");
     const toDoList = document.getElementById("list");
     const toDoArr = [
@@ -51,6 +52,13 @@ document.addEventListener('DOMContentLoaded', function () {
             createToDoList();
         }
     })
+
+    //delete all button
+    deleteAllBtn.addEventListener("click", () => {
+        toDoArr.length = 0;
+        createToDoList();
+    });
+
     createToDoList();
 
 });
