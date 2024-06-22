@@ -23,8 +23,8 @@ fetch('https://api.spacexdata.com/v3/launches')
             <div class="card" style="width: 18rem;">
                  <img src="${item.links.mission_patch}" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">${item.rocket.rocket_name}</h5>
-                  <p class="card-text">${item.details}</p>
+                  <h5 class="card-title">${item.rocket.rocket_name || ''}</h5>
+                  <p class="card-text">${item.details || ''}</p>
                   <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
