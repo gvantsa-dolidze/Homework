@@ -2,14 +2,5 @@ body {
     margin: 0;
     padding: 0;
 }
-.center {
-    width:90%;
-    max-width: 100%;
-    border:3px solid gray;
-    border-radius: 30px;
-    margin:auto;
-    padding:10px;
-    display:flex;
-    gap:20px;
-}
+
 
