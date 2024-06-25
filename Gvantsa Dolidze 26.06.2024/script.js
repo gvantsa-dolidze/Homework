@@ -26,7 +26,7 @@ const submitBtn = document.getElementById('btn');
 const ul = document.getElementById('ul');
 const api = 'https://api.restful-api.dev/objects';
 
-// fetch POST 
+// fetch GET request
 
 fetch(api)
     .then(response => response.json())
@@ -49,3 +49,5 @@ fetch(api)
 
     })
     .catch(error => console.error('Error:', error));
+
+    // fetch POST request
