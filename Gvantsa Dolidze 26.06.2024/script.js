@@ -21,7 +21,6 @@ const yearInput = document.getElementById('year');
 const priceInput = document.getElementById('price');
 const cpuModelInput = document.getElementById('cpu_model');
 const hardDiskInput = document.getElementById('hard_disk');
-const submitBtn = document.getElementById('btn');
 const ul = document.getElementById('ul');
 const api = 'https://api.restful-api.dev/objects';
 
