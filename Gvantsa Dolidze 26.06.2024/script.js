@@ -16,11 +16,7 @@
 // გააკეთეთ ფორმა და POST მეთოდით გააგზავნეთ ფორმაში შეყვანილი ინფორმაცია ზემოთ აღნიშნულ მისამართზე,
 // რესპონსში დაბრუნებული დატა შეინახეთ მასივში და გამოიტანეთ ლისტის სახით ფორმის გვერძე.
 
-const nameInput = document.getElementById('name');
-const yearInput = document.getElementById('year');
-const priceInput = document.getElementById('price');
-const cpuModelInput = document.getElementById('cpu_model');
-const hardDiskInput = document.getElementById('hard_disk');
+
 const ul = document.getElementById('ul');
 const api = 'https://api.restful-api.dev/objects';
 
@@ -54,18 +50,24 @@ function onSubmit(event) {
     
     event.preventDefault();
     
+    const nameInput = document.getElementById('name').value;
+    const yearInput = document.getElementById('year').value;
+    const priceInput = document.getElementById('price').value;
+    const cpuModelInput = document.getElementById('cpu_model').value;
+    const hardDiskInput = document.getElementById('hard_disk').value;
+
     fetch(api, {
         method: 'POST',
         headers: {
             'Content-type': 'application/json'
         },
         body: JSON.stringify({
-            name: nameInput.value,
+            name: nameInput,
             data: {
-                year: yearInput.value,
-                price: priceInput.value,
-                "CPU model": cpuModelInput.value,
-                "Hard disk size": hardDiskInput.value,
+                year: yearInput,
+                price: priceInput,
+                "CPU model": cpuModelInput,
+                "Hard disk size": hardDiskInput,
             },
         })
     })
