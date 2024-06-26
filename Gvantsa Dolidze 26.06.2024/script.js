@@ -80,3 +80,11 @@ function onSubmit(event) {
         })
         .catch(error => console.error('Error:', error));
 }
+
+//მგავს შეცდომას მიგდებს ამიტომ ბოლომდე მომდევნო გაკვეთილისთვის გავაკეთებ. სხვა მაგალითზე გავარჩე და მიივხვდი როგორ უნდა დატის ლოკალურ მასივში შენახვა და შემდეგ ცხრილში ლისტში გამოტანა
+
+// {
+//     "error": "We are very sorry but you reached your limit of requests per day. Our current limit is equal to 100 requests per day. 
+//     The reason for that is the fact that servers cost money and 200 requests per user per day is all that we can afford at the moment. Tomorrow the limit will
+//      reset and you will be able to continue. Thanks and have a good day!"
+//   }
