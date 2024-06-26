@@ -51,6 +51,9 @@ getData();
 
 // fetch POST request
 function onSubmit(event) {
+    
+    event.preventDefault();
+    
     fetch(api, {
         method: 'POST',
         headers: {
@@ -69,7 +72,9 @@ function onSubmit(event) {
 
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             getData();
+            
         })
         .catch(error => console.error('Error:', error));
 }
