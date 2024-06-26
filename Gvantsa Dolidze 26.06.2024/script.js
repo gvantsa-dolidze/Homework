@@ -17,7 +17,6 @@
 // რესპონსში დაბრუნებული დატა შეინახეთ მასივში და გამოიტანეთ ლისტის სახით ფორმის გვერძე.
 
 const nameInput = document.getElementById('name');
-const dateInput = document.getElementById('date');
 const yearInput = document.getElementById('year');
 const priceInput = document.getElementById('price');
 const cpuModelInput = document.getElementById('cpu_model');
@@ -27,13 +26,12 @@ const ul = document.getElementById('ul');
 const api = 'https://api.restful-api.dev/objects';
 
 // fetch GET request
-
+function getData() {
 fetch(api)
     .then(response => response.json())
-    .then(about => {
-
-        for (let i = 0; i < about.length; i++) {
-            const item = about[i];
+    .then(data => {
+        for (let i = 0; i < data.length; i++) {
+            const item = data[i];
             console.log(item);
             ul.innerHTML += `
            <li>
@@ -46,8 +44,33 @@ fetch(api)
                 </li>
         `
         }
-
     })
     .catch(error => console.error('Error:', error));
+}
+getData();
 
-    // fetch POST request
+
+// fetch POST request
+function onSubmit(event) {
+    fetch(api, {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: nameInput.value,
+            data: {
+                year: yearInput.value,
+                price: priceInput.value,
+                "CPU model": cpuModelInput.value,
+                "Hard disk size": hardDiskInput.value,
+            },
+        })
+    })
+
+        .then(response => response.json())
+        .then(data => {
+            getData();
+        })
+        .catch(error => console.error('Error:', error));
+}
