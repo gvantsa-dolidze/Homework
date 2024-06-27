@@ -19,17 +19,18 @@
 
 const ul = document.getElementById('ul');
 const api = 'https://api.restful-api.dev/objects';
+let dataArray = [];
 
-// fetch GET request
+// GET request into empty local array:
 function getData() {
-fetch(api)
-    .then(response => response.json())
-    .then(data => {
-        for (let i = 0; i < data.length; i++) {
-            const item = data[i];
-            console.log(item);
-            ul.innerHTML += `
-           <li>
+    fetch(api)
+        .then(response => response.json())
+        .then(data => {
+            dataArray = data;
+            //   console.log(dataArray)
+            dataArray.forEach(item => {
+                ul.innerHTML += `
+                <li>
                     <p><span>Id: </span> ${item.id}</p>
                     <p><span>Name: </span> ${item.name || "არ არის მითითებული"}</p>
                     <p><span>Year: </span> ${item.data && item.data.year ? item.data.year : "არ არის მითითებული"}</p>
@@ -37,19 +38,37 @@ fetch(api)
                     <p><span>CPU Model: </span> ${item.data && item.data.generation ? item.data.generation : "არ არის მითითებული"}</p>
                     <p><span>Hard Disk Size: </span> ${item.data && item.data.capacity ? item.data.capacity : "არ არის მითითებული"}</p>
                 </li>
-        `
-        }
-    })
-    .catch(error => console.error('Error:', error));
+            `
+            })
+
+
+            // GET request: (მუშაობს)
+
+            // for (let i = 0; i < data.length; i++) {
+            //     const item = data[i];
+            //     // console.log(item);
+            //     ul.innerHTML += `
+            //    <li>
+            //             <p><span>Id: </span> ${item.id}</p>
+            //             <p><span>Name: </span> ${item.name || "არ არის მითითებული"}</p>
+            //             <p><span>Year: </span> ${item.data && item.data.year ? item.data.year : "არ არის მითითებული"}</p>
+            //             <p><span>Price: </span> ${item.data && item.data.price ? item.data.price : "არ არის მითითებული"}</p>
+            //             <p><span>CPU Model: </span> ${item.data && item.data.generation ? item.data.generation : "არ არის მითითებული"}</p>
+            //             <p><span>Hard Disk Size: </span> ${item.data && item.data.capacity ? item.data.capacity : "არ არის მითითებული"}</p>
+            //         </li>
+            // `
+            // }
+        })
+        .catch(error => console.error('Error:', error));
 }
 getData();
 
 
-// fetch POST request
+// POST request
 function onSubmit(event) {
-    
+
     event.preventDefault();
-    
+
     const nameInput = document.getElementById('name').value;
     const yearInput = document.getElementById('year').value;
     const priceInput = document.getElementById('price').value;
@@ -74,17 +93,21 @@ function onSubmit(event) {
 
         .then(response => response.json())
         .then(data => {
-            console.log(data);
-            getData();
+            ul.innerHTML = "";
             
+            // console.log(data);
+           getData();
+
+
+            // არ იშლება ინფუთებში შეყვანილი ინფო  საბმითის მერე :( ????????????????
+            nameInput.value = "";
+            yearInput.value = "";
+            priceInput.value = "";
+            cpuModelInput.value = "";
+            hardDiskInput.value = "";
+            
+
         })
         .catch(error => console.error('Error:', error));
+        
 }
-
-//მგავს შეცდომას მიგდებს ამიტომ ბოლომდე მომდევნო გაკვეთილისთვის გავაკეთებ. სხვა მაგალითზე გავარჩე და მიივხვდი როგორ უნდა დატის ლოკალურ მასივში შენახვა და შემდეგ ცხრილში ლისტში გამოტანა
-
-// {
-//     "error": "We are very sorry but you reached your limit of requests per day. Our current limit is equal to 100 requests per day. 
-//     The reason for that is the fact that servers cost money and 200 requests per user per day is all that we can afford at the moment. Tomorrow the limit will
-//      reset and you will be able to continue. Thanks and have a good day!"
-//   }
