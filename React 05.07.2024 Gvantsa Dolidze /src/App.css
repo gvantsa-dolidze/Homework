@@ -5,8 +5,11 @@
   max-width:1000px;
   /* border:1px solid gray; */
   display: flex;
-    justify-content: center;
+  justify-content: center;
+  flex-direction:column;
 }
-
+h1 {
+  color:rgb(86, 83, 83);
+}
 
 

@@ -6,7 +6,7 @@ import Button from '../button/Button';
 
 const Form = () => {
     return (
-        <form className="form">
+        <form className="form" type="submit">
             <FirstName />
             <LastName />
             <Email />

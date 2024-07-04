@@ -3,8 +3,8 @@ import './InputStyle.css'
 const Email = () => {
     return(
         <div className="inline_div">
-            <label>Enter Your Email:</label>
-        <input />
+            <label type='email' for="email" name="email">Enter Your Email:</label>
+            <input  id="email" />
         </div>
     )
 }
