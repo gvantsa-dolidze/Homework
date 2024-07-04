@@ -40,7 +40,7 @@ function getData() {
                 </li>
             `
             })
-
+            
 
             // GET request: (მუშაობს)
 
@@ -95,10 +95,8 @@ function onSubmit(event) {
         .then(data => {
             ul.innerHTML = "";
             
-            // console.log(data);
-           getData();
-
-
+            
+            
             // არ იშლება ინფუთებში შეყვანილი ინფო  საბმითის მერე :( ????????????????
             nameInput.value = "";
             yearInput.value = "";
