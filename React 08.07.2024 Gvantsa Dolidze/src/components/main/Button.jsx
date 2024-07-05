@@ -1,7 +1,8 @@
+import React from "react";
 const Button = () => {
     return (
         <div>
-            <button>Click</button>
+            <button className="btn btn-primary">Click</button>
         </div>
     )
 }
