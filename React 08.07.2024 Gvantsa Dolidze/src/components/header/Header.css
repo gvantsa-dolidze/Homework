@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:20px 50px;
+    background-color: rgba(0, 0, 0, 0.182);
+}
+
+.header_nav {
+    display: flex;
+    gap: 30px;
+}
+
+.header_nav a {
+    text-decoration: none;
+}
