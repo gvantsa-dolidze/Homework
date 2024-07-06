@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "./Button";
-const CheckButton = () => {
+const CheckButton = (props) => {
   const [theme, setTheme] = useState("btn btn-primary");
 
   const changeTheme = () => {
@@ -14,9 +14,9 @@ const CheckButton = () => {
   };
   return (
     <div className="flex">
-      <Button theme={theme} />
+      <Button theme={theme} text="Click"/>
       <button className="btn btn-danger" onClick={changeTheme}>
-        Change
+        {props.text}
       </button>
     </div>
   );
