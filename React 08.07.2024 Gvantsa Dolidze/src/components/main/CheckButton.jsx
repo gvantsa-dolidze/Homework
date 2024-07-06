@@ -13,7 +13,7 @@ const CheckButton = () => {
     } else setTheme("btn btn-primary");
   };
   return (
-    <div>
+    <div className="flex">
       <Button theme={theme} />
       <button className="btn btn-danger" onClick={changeTheme}>
         Change
