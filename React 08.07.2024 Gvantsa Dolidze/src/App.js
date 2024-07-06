@@ -6,10 +6,10 @@ const App = () => {
   return (
     <div className="App">
          <Header logo="LoGo"
-                 nav1="Kitchen"
-                 nav2="Dinnerware"
-                 nav3="Bath"
-                 nav4="Textile"
+                 nav1="Main"
+                 nav2="Contact"
+                 nav3="About us"
+                 nav4="Products"
          />
        
        <h1>Click the "Change" button</h1>
